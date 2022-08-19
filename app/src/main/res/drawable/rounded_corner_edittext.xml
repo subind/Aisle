@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <corners android:radius="@dimen/et_corner_radius" />
+
+    <padding
+        android:top="@dimen/et_ph_number_top_bottom_padding"
+        android:bottom="@dimen/et_ph_number_top_bottom_padding"
+        android:left="@dimen/et_ph_number_left_right_padding"
+        android:right="@dimen/et_ph_number_left_right_padding" />
+
+    <stroke
+        android:width="@dimen/btn_border_stroke_thickness"
+        android:color="@color/grey" />
+
+</shape>

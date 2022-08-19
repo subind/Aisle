@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="primary_title_top_margin">80dp</dimen>
+    <dimen name="secondary_title_top_margin">8dp</dimen>
+    <dimen name="primary_title_start_margin">30dp</dimen>
+    <dimen name="secondary_title_start_margin">30dp</dimen>
+    <dimen name="secondary_title_end_margin">125dp</dimen>
+
+    <dimen name="et_country_code_start_margin">31dp</dimen>
+    <dimen name="et_country_code_width">64dp</dimen>
+    <dimen name="et_country_code_height">36dp</dimen>
+
+    <dimen name="et_ph_number_width">147dp</dimen>
+    <dimen name="et_ph_number_height">36dp</dimen>
+    <dimen name="et_ph_number_left_right_padding">14dp</dimen>
+    <dimen name="et_ph_number_top_bottom_padding">7dp</dimen>
+    <dimen name="et_ph_number_top_margin">12dp</dimen>
+    <dimen name="et_ph_number_start_margin">8dp</dimen>
+    <dimen name="et_corner_radius">8dp</dimen>
+
+    <dimen name="btn_continue_width">96dp</dimen>
+    <dimen name="btn_continue_height">40dp</dimen>
+    <dimen name="btn_border_stroke_thickness">1dp</dimen>
+    <dimen name="btn_continue_top_margin">19dp</dimen>
+    <dimen name="btn_continue_start_margin">32dp</dimen>
+    <dimen name="btn_corner_radius">20dp</dimen>
+
+    <!--Text sizes-->
+    <dimen name="primary_text_size">18sp</dimen>
+    <dimen name="secondary_text_size">30sp</dimen>
+    <dimen name="btn_continue_txt_size">14sp</dimen>
+
+</resources>
