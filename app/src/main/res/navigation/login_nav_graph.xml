@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/login_nav_graph">
+    android:id="@+id/login_nav_graph"
+    app:startDestination="@id/phoneNumberFragment">
 
+    <fragment
+        android:id="@+id/phoneNumberFragment"
+        android:name="com.example.aisle.ui.PhoneNumberFragment"
+        android:label="PhoneNumberFragment">
+        <action
+            android:id="@+id/action_phoneNumberFragment_to_otpFragment"
+            app:destination="@id/otpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/otpFragment"
+        android:name="com.example.aisle.ui.OtpFragment"
+        android:label="OtpFragment">
+        <action
+            android:id="@+id/action_otpFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.example.aisle.ui.HomeActivity"
+        android:label="HomeActivity" />
 </navigation>

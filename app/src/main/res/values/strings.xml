@@ -6,4 +6,8 @@
     <string name="enter_the_otp">Enter The OTP</string>
     <string name="placeholder_oto_count_down">00:59</string>
     <string name="placeholder_ph_number">+91 9999999999</string>
+    <string name="discover">Discover</string>
+    <string name="notes">Notes</string>
+    <string name="matches">Matches</string>
+    <string name="profile">Profile</string>
 </resources>
