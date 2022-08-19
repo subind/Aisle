@@ -7,6 +7,7 @@
     <TextView
         android:id="@+id/primary_title_tv"
         style="@style/tv_primary_title_style"
+        android:text="@string/get_otp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/primary_title_top_margin"
@@ -15,6 +16,7 @@
     <TextView
         android:id="@+id/secondary_title_tv"
         style="@style/tv_secondary_title_style"
+        android:text="@string/enter_your_phone_number"
         android:layout_marginTop="@dimen/secondary_title_top_margin"
         android:layout_marginStart="@dimen/secondary_title_start_margin"
         android:layout_marginEnd="@dimen/secondary_title_end_margin"
@@ -23,7 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
-        android:id="@+id/country_code_tv"
+        android:id="@+id/country_code_et"
         style="@style/et_country_code_style"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/secondary_title_tv"
@@ -31,9 +33,9 @@
         android:layout_marginStart="@dimen/et_country_code_start_margin" />
 
     <EditText
-        android:id="@+id/phone_number_tv"
+        android:id="@+id/phone_number_et"
         style="@style/et_ph_number_style"
-        app:layout_constraintStart_toEndOf="@+id/country_code_tv"
+        app:layout_constraintStart_toEndOf="@+id/country_code_et"
         app:layout_constraintTop_toBottomOf="@+id/secondary_title_tv"
         android:layout_marginTop="@dimen/et_ph_number_top_margin"
         android:layout_marginStart="@dimen/et_ph_number_start_margin"  />
@@ -42,7 +44,7 @@
         android:id="@+id/continue_btn"
         style="@style/btn_continue_style"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/country_code_tv"
+        app:layout_constraintTop_toBottomOf="@+id/country_code_et"
         android:layout_marginTop="@dimen/btn_continue_top_margin"
         android:layout_marginStart="@dimen/btn_continue_start_margin" />
 

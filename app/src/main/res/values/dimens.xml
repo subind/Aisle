@@ -6,10 +6,17 @@
     <dimen name="primary_title_start_margin">30dp</dimen>
     <dimen name="secondary_title_start_margin">30dp</dimen>
     <dimen name="secondary_title_end_margin">125dp</dimen>
+    <dimen name="secondary_title_otp_end_margin">201dp</dimen>
 
     <dimen name="et_country_code_start_margin">31dp</dimen>
     <dimen name="et_country_code_width">64dp</dimen>
     <dimen name="et_country_code_height">36dp</dimen>
+
+    <dimen name="et_otp_width">78dp</dimen>
+    <dimen name="et_otp_height">36dp</dimen>
+
+    <dimen name="tv_otp_count_down_width">42dp</dimen>
+    <dimen name="tv_otp_count_down_height">17dp</dimen>
 
     <dimen name="et_ph_number_width">147dp</dimen>
     <dimen name="et_ph_number_height">36dp</dimen>
@@ -26,9 +33,13 @@
     <dimen name="btn_continue_start_margin">32dp</dimen>
     <dimen name="btn_corner_radius">20dp</dimen>
 
+    <dimen name="iv_edit_start_margin">8.17dp</dimen>
+    <dimen name="iv_edit_width_height">11.71dp</dimen>
+
     <!--Text sizes-->
     <dimen name="primary_text_size">18sp</dimen>
     <dimen name="secondary_text_size">30sp</dimen>
     <dimen name="btn_continue_txt_size">14sp</dimen>
+    <dimen name="tv_otp_count_down_text_size">14sp</dimen>
 
 </resources>

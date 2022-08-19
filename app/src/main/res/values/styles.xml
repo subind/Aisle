@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="width_match_height_match_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
     
     <style name="tv_primary_title_style">
         <item name="android:layout_width">wrap_content</item>
@@ -7,7 +12,6 @@
         <item name="android:textSize">@dimen/primary_text_size</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/black_primary</item>
-        <item name="android:text">@string/get_otp</item>
     </style>
 
     <style name="tv_secondary_title_style">
@@ -16,7 +20,6 @@
         <item name="android:textSize">@dimen/secondary_text_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/black_primary</item>
-        <item name="android:text">@string/enter_your_phone_number</item>
         <item name="android:lines">2</item>
     </style>
     
@@ -53,6 +56,29 @@
         <item name="android:paddingEnd">@dimen/et_ph_number_left_right_padding</item>
         <item name="android:paddingTop">@dimen/et_ph_number_top_bottom_padding</item>
         <item name="android:paddingBottom">@dimen/et_ph_number_top_bottom_padding</item>
+    </style>
+
+    <style name="et_otp_style">
+        <item name="android:layout_width">@dimen/et_otp_width</item>
+        <item name="android:layout_height">@dimen/et_otp_height</item>
+        <item name="android:textColor">@color/black_primary</item>
+        <item name="android:textSize">@dimen/primary_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">end</item>
+        <item name="android:background">@drawable/rounded_corner_edittext</item>
+    </style>
+
+    <style name="tv_otp_count_down_style">
+        <item name="android:layout_width">@dimen/tv_otp_count_down_width</item>
+        <item name="android:layout_height">@dimen/tv_otp_count_down_height</item>
+        <item name="android:textColor">@color/black_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/tv_otp_count_down_text_size</item>
+    </style>
+
+    <style name="iv_edit_style">
+        <item name="android:layout_width">@dimen/iv_edit_width_height</item>
+        <item name="android:layout_height">@dimen/iv_edit_width_height</item>
     </style>
     
 </resources>

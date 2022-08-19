@@ -3,4 +3,7 @@
     <string name="get_otp">Get OTP</string>
     <string name="enter_your_phone_number">Enter Your Phone Number</string>
     <string name="_continue">Continue</string>
+    <string name="enter_the_otp">Enter The OTP</string>
+    <string name="placeholder_oto_count_down">00:59</string>
+    <string name="placeholder_ph_number">+91 9999999999</string>
 </resources>

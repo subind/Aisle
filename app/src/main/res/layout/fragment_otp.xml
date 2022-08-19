@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/width_match_height_match_style">
+
+    <TextView
+        android:id="@+id/primary_title_tv"
+        style="@style/tv_primary_title_style"
+        android:layout_marginStart="@dimen/primary_title_start_margin"
+        android:layout_marginTop="@dimen/primary_title_top_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/placeholder_ph_number" />
+
+    <ImageView
+        style="@style/iv_edit_style"
+        android:layout_marginStart="@dimen/iv_edit_start_margin"
+        android:src="@drawable/edit_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/primary_title_tv"
+        app:layout_constraintStart_toEndOf="@+id/primary_title_tv"
+        app:layout_constraintTop_toTopOf="@+id/primary_title_tv" />
+
+    <TextView
+        android:id="@+id/secondary_title_tv"
+        style="@style/tv_secondary_title_style"
+        android:layout_marginStart="@dimen/secondary_title_start_margin"
+        android:layout_marginTop="@dimen/secondary_title_top_margin"
+        android:layout_marginEnd="@dimen/secondary_title_otp_end_margin"
+        android:text="@string/enter_the_otp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/primary_title_tv" />
+
+    <EditText
+        android:id="@+id/otp_et"
+        style="@style/et_country_code_style"
+        android:layout_marginStart="@dimen/et_country_code_start_margin"
+        android:layout_marginTop="@dimen/et_ph_number_top_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/secondary_title_tv" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/continue_btn"
+        style="@style/btn_continue_style"
+        android:layout_marginStart="@dimen/btn_continue_start_margin"
+        android:layout_marginTop="@dimen/btn_continue_top_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_et" />
+
+    <TextView
+        android:id="@+id/otp_count_down_tv"
+        style="@style/tv_otp_count_down_style"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/continue_btn"
+        app:layout_constraintStart_toEndOf="@+id/continue_btn"
+        app:layout_constraintTop_toTopOf="@+id/continue_btn"
+        tools:text="@string/placeholder_oto_count_down" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
