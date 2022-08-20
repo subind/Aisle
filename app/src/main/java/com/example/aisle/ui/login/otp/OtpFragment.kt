@@ -57,10 +57,13 @@ class OtpFragment : Fragment() {
 
         btnContinue = view.findViewById(R.id.continue_btn)!!
         btnContinue.setOnClickListener {
-            if(userPhoneNumber.isNotEmpty() && etOtp.text.toString().trim().isNotEmpty()) {
-                viewModel.getTokenFromApi(userPhoneNumber, etOtp.text.toString().trim())
+            val userOtp = etOtp.text.toString().trim()
+            if(userPhoneNumber.isNotEmpty() &&
+                userOtp.isNotEmpty() &&
+                userOtp.length == 4) {
+                viewModel.getTokenFromApi(userPhoneNumber, userOtp)
             }else {
-                Toast.makeText(requireContext(), "", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), getString(R.string.otp_issue), Toast.LENGTH_LONG).show()
             }
         }
     }
@@ -81,10 +84,14 @@ class OtpFragment : Fragment() {
         })
 
         viewModel.otpVerifiedTokenObtainedLiveData.observe(this, Observer { token ->
-            val action =
-                OtpFragmentDirections.actionOtpFragmentToHomeActivity(token)
-            findNavController().navigate(action)
-            requireActivity().finish()
+            if(token.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), getString(R.string.token_issue), Toast.LENGTH_LONG).show()
+            } else {
+                val action =
+                    OtpFragmentDirections.actionOtpFragmentToHomeActivity(token)
+                findNavController().navigate(action)
+                requireActivity().finish()
+            }
         })
 
     }

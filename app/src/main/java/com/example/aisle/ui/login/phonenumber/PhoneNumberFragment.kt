@@ -46,8 +46,15 @@ class PhoneNumberFragment : Fragment() {
         btnContinue = view.findViewById(R.id.continue_btn)
 
         btnContinue.setOnClickListener {
-            userPhoneNumber = etCountryCode.text.toString().trim() + etPhoneNumber.text.toString().trim()
-            viewModel.invokeIsExistingUserApi(userPhoneNumber)
+            val userTempCountryCode = etCountryCode.text.toString().trim()
+            val userTempPhoneNumber = etPhoneNumber.text.toString().trim()
+            if(userTempCountryCode.isNotEmpty() && userTempCountryCode.length == 3 &&
+                userTempPhoneNumber.isNotEmpty() && userTempPhoneNumber.length == 10) {
+                userPhoneNumber = userTempCountryCode + userTempPhoneNumber
+                viewModel.invokeIsExistingUserApi(userPhoneNumber)
+            } else {
+                Toast.makeText(requireContext(), getString(R.string.ph_number_issue), Toast.LENGTH_LONG).show()
+            }
         }
     }
 
