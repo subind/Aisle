@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/phoneNumberFragment"
-        android:name="com.example.aisle.ui.login.PhoneNumberFragment"
+        android:name="com.example.aisle.ui.login.phonenumber.PhoneNumberFragment"
         android:label="PhoneNumberFragment">
         <action
             android:id="@+id/action_phoneNumberFragment_to_otpFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/otpFragment"
-        android:name="com.example.aisle.ui.login.OtpFragment"
+        android:name="com.example.aisle.ui.login.otp.OtpFragment"
         android:label="OtpFragment">
         <action
             android:id="@+id/action_otpFragment_to_homeActivity"

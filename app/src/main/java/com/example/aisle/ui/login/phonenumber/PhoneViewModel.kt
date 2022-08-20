@@ -1,4 +1,4 @@
-package com.example.aisle.ui.login
+package com.example.aisle.ui.login.phonenumber
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -15,8 +15,8 @@ class PhoneViewModel : ViewModel() {
     private val TAG = "PhoneViewModel"
     private var api: AisleApi = RetrofitInstance.aisleApi
 
-    val isExistingUserLiveData = MutableLiveData<Boolean>()
-    private val _isExistingUserLiveData = isExistingUserLiveData
+    private val _isExistingUserLiveData = MutableLiveData<Boolean>()
+    val isExistingUserLiveData = _isExistingUserLiveData
 
     fun invokeIsExistingUserApi(userPhoneNumber: String) {
         viewModelScope.launch(Dispatchers.IO) {

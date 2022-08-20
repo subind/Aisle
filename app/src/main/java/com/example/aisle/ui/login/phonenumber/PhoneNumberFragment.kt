@@ -1,4 +1,4 @@
-package com.example.aisle.ui.login
+package com.example.aisle.ui.login.phonenumber
 
 import android.os.Bundle
 import android.util.Log
@@ -56,7 +56,9 @@ class PhoneNumberFragment : Fragment() {
             Log.i(TAG, "Status of user is: $status")
             if(status) {
                 val action =
-                    PhoneNumberFragmentDirections.actionPhoneNumberFragmentToOtpFragment(userPhoneNumber)
+                    PhoneNumberFragmentDirections.actionPhoneNumberFragmentToOtpFragment(
+                        userPhoneNumber
+                    )
                 findNavController().navigate(action)
             }else {
                 Toast.makeText(requireContext(), getString(R.string.incorrect_ph_number), Toast.LENGTH_LONG).show()
