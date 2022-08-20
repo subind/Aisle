@@ -3,17 +3,17 @@
     <item
         android:id="@+id/discover_nav_graph"
         android:title="@string/discover"
-        android:icon="@drawable/discover_explore_icon"/>
+        android:icon="@drawable/icon_discover_explore"/>
     <item
         android:id="@+id/notes_nav_graph"
         android:title="@string/notes"
-        android:icon="@drawable/mail_notes_icon"/>
+        android:icon="@drawable/icon_mail_notes"/>
     <item
         android:id="@+id/matches_nav_graph"
         android:title="@string/matches"
-        android:icon="@drawable/chat_matches_icon"/>
+        android:icon="@drawable/icon_chat_matches"/>
     <item
         android:id="@+id/profile_nav_graph"
         android:title="@string/profile"
-        android:icon="@drawable/person_profile_icon"/>
+        android:icon="@drawable/icon_person_profile"/>
 </menu>

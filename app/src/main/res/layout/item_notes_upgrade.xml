@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/primary_title_upgrade_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black_primary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Interested In You" />
+
+    <TextView
+        android:id="@+id/secondary_title_upgrade_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey_1"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/upgrade_btn"
+        app:layout_constraintStart_toStartOf="@+id/primary_title_upgrade_tv"
+        app:layout_constraintTop_toBottomOf="@+id/primary_title_upgrade_tv"
+        android:layout_marginEnd="24dp"
+        tools:text="@string/upgrade_secondary_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/upgrade_btn"
+        style="@style/btn_yellow_rounded_corner_style"
+        android:text="@string/upgrade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

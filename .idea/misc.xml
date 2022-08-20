@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/discover.xml" value="0.2385" />
+        <entry key="app/src/main/res/drawable/image_rounded_corner_gradient.xml" value="0.189" />
         <entry key="app/src/main/res/drawable/matches.xml" value="0.2225" />
         <entry key="app/src/main/res/drawable/notes.xml" value="0.2385" />
         <entry key="app/src/main/res/drawable/rounded_corner_button.xml" value="0.2385" />
@@ -16,6 +18,10 @@
         <entry key="app/src/main/res/layout/fragment_otp.xml" value="0.4601486206054688" />
         <entry key="app/src/main/res/layout/fragment_phone_number.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.20199275362318841" />
+        <entry key="app/src/main/res/layout/item_notes_primary_profile.xml" value="0.21693840579710144" />
+        <entry key="app/src/main/res/layout/item_notes_secondary_profile.xml" value="0.21693840579710144" />
+        <entry key="app/src/main/res/layout/item_notes_title.xml" value="0.21693840579710144" />
+        <entry key="app/src/main/res/layout/item_notes_upgrade.xml" value="0.335" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.23802083333333332" />
       </map>
     </option>

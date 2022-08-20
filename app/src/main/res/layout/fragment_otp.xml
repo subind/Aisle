@@ -16,7 +16,7 @@
     <ImageView
         style="@style/iv_edit_style"
         android:layout_marginStart="@dimen/iv_edit_start_margin"
-        android:src="@drawable/edit_icon"
+        android:src="@drawable/icon_edit"
         app:layout_constraintBottom_toBottomOf="@+id/primary_title_tv"
         app:layout_constraintStart_toEndOf="@+id/primary_title_tv"
         app:layout_constraintTop_toTopOf="@+id/primary_title_tv" />
@@ -42,7 +42,8 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/continue_btn"
-        style="@style/btn_continue_style"
+        style="@style/btn_yellow_rounded_corner_style"
+        android:text="@string/_continue"
         android:layout_marginStart="@dimen/btn_continue_start_margin"
         android:layout_marginTop="@dimen/btn_continue_top_margin"
         app:layout_constraintStart_toStartOf="parent"
