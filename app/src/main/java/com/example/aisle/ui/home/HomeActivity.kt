@@ -11,10 +11,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class HomeActivity: AppCompatActivity() {
 
     private lateinit var navController: NavController
+    private lateinit var token: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        token = intent.getStringExtra(getString(R.string.navArgToken)) ?: ""
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_home_fragment) as NavHostFragment
         navController = navHostFragment.navController

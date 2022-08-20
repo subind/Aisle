@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.aisle.R
 import com.example.aisle.utils.Common.Companion.insertSpaceAfterCountryCode
@@ -22,6 +24,8 @@ class OtpFragment : Fragment() {
     private lateinit var btnContinue: Button
     private lateinit var tvUserPhoneNumber: TextView
     private lateinit var tvOtpCountDown: TextView
+    private lateinit var etOtp: EditText
+    private lateinit var userPhoneNumber: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,18 +48,20 @@ class OtpFragment : Fragment() {
     }
 
     private fun initViews(view: View?) {
+        etOtp = view?.findViewById(R.id.otp_et)!!
         tvOtpCountDown = view?.findViewById(R.id.otp_count_down_tv)!!
 
         tvUserPhoneNumber = view.findViewById(R.id.primary_title_tv)!!
-        val userPhoneNumber = arguments?.getString(getString(R.string.navArgPhoneNumber)) ?: ""
+        userPhoneNumber = arguments?.getString(getString(R.string.navArgPhoneNumber)) ?: ""
         tvUserPhoneNumber.text = userPhoneNumber.insertSpaceAfterCountryCode()
 
         btnContinue = view.findViewById(R.id.continue_btn)!!
         btnContinue.setOnClickListener {
-            val action =
-                OtpFragmentDirections.actionOtpFragmentToHomeActivity()
-            findNavController().navigate(action)
-            requireActivity().finish()
+            if(userPhoneNumber.isNotEmpty() && etOtp.text.toString().trim().isNotEmpty()) {
+                viewModel.getTokenFromApi(userPhoneNumber, etOtp.text.toString().trim())
+            }else {
+                Toast.makeText(requireContext(), "", Toast.LENGTH_LONG).show()
+            }
         }
     }
 
@@ -73,6 +79,14 @@ class OtpFragment : Fragment() {
         viewModel.otpCountDownTimeLiveData.observe(this, Observer {
             tvOtpCountDown.text = "00:${it.toString()}"
         })
+
+        viewModel.otpVerifiedTokenObtainedLiveData.observe(this, Observer { token ->
+            val action =
+                OtpFragmentDirections.actionOtpFragmentToHomeActivity(token)
+            findNavController().navigate(action)
+            requireActivity().finish()
+        })
+
     }
 
 }

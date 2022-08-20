@@ -26,5 +26,9 @@
     <activity
         android:id="@+id/homeActivity"
         android:name="com.example.aisle.ui.home.HomeActivity"
-        android:label="HomeActivity" />
+        android:label="HomeActivity">
+        <argument
+            android:name="navArgToken"
+            app:argType="string" />
+    </activity>
 </navigation>

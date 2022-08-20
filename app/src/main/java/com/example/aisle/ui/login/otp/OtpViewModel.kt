@@ -5,14 +5,15 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import com.example.aisle.data.network.AisleApi
+import com.example.aisle.data.network.RetrofitInstance
+import kotlinx.coroutines.*
 import java.util.concurrent.TimeUnit
 
 class OtpViewModel : ViewModel() {
 
     private val TAG = "OtpViewModel"
+    private var api: AisleApi = RetrofitInstance.aisleApi
     private lateinit var otpCountDownTimer: CountDownTimer
     private lateinit var otpCountDownTimerJob: Job
 
@@ -21,6 +22,9 @@ class OtpViewModel : ViewModel() {
 
     private val _otpCountDownCompleteStatusLiveData = MutableLiveData<Boolean>()
     val otpCountDownCompleteStatusLiveData = _otpCountDownCompleteStatusLiveData
+
+    private val _otpVerifiedTokenObtainedLiveData = MutableLiveData<String>()
+    val otpVerifiedTokenObtainedLiveData = _otpVerifiedTokenObtainedLiveData
 
     init {
         runBlocking {
@@ -41,6 +45,22 @@ class OtpViewModel : ViewModel() {
                     _otpCountDownCompleteStatusLiveData.value = true
                 }
             }.start()
+        }
+    }
+
+    fun getTokenFromApi(userPhoneNumber: String, otp: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = api.otp(userPhoneNumber, otp)
+            if (response.isSuccessful) {
+                withContext(Dispatchers.Main) {
+                    otpVerifiedTokenObtainedLiveData.value = response.body()?.token
+                }
+            } else {
+                Log.i(
+                    TAG,
+                    "An error occurred in OtpViewModel: ${response.errorBody().toString()}"
+                )
+            }
         }
     }
 

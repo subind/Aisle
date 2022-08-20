@@ -20,5 +20,6 @@
 
     <!--Navigation argument keys-->
     <string name="navArgPhoneNumber">navArgPhoneNumber</string>
+    <string name="navArgToken">navArgToken</string>
 
 </resources>
