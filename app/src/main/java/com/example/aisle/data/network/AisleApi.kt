@@ -29,7 +29,7 @@ interface AisleApi {
 
     @GET("users/test_profile_list")
     suspend fun notes(
-        @Header("Token")
+        @Header("Authorization")
         token: String
     ): Response<Note>
 

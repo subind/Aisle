@@ -11,7 +11,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class HomeActivity: AppCompatActivity() {
 
     private lateinit var navController: NavController
-    private lateinit var token: String
+    lateinit var token: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
