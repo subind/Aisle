@@ -1,4 +1,4 @@
-package com.example.aisle.ui
+package com.example.aisle.ui.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

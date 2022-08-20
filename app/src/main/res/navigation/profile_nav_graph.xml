@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.aisle.ui.ProfileFragment"
+        android:name="com.example.aisle.ui.home.profile.ProfileFragment"
         android:label="ProfileFragment" />
 </navigation>

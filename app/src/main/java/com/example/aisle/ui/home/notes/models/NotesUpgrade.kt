@@ -1,4 +1,4 @@
-package com.example.aisle.data
+package com.example.aisle.ui.home.notes.models
 
 data class NotesUpgrade(
     var heading: String,

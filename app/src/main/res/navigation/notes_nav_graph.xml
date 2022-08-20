@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/notesFragment"
-        android:name="com.example.aisle.ui.NotesFragment"
+        android:name="com.example.aisle.ui.home.notes.NotesFragment"
         android:label="NotesFragment" />
 </navigation>

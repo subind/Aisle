@@ -1,4 +1,4 @@
-package com.example.aisle.ui
+package com.example.aisle.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -35,7 +35,8 @@ class OtpFragment : Fragment() {
 
         btnContinue = view?.findViewById(R.id.continue_btn)!!
         btnContinue.setOnClickListener {
-            val action = OtpFragmentDirections.actionOtpFragmentToHomeActivity()
+            val action =
+                OtpFragmentDirections.actionOtpFragmentToHomeActivity()
             findNavController().navigate(action)
             requireActivity().finish()
         }

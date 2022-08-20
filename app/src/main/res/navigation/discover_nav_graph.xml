@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/discoverFragment"
-        android:name="com.example.aisle.ui.DiscoverFragment"
+        android:name="com.example.aisle.ui.home.discover.DiscoverFragment"
         android:label="DiscoverFragment" />
 </navigation>

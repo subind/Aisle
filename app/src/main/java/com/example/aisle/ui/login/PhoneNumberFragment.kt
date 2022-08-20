@@ -1,4 +1,4 @@
-package com.example.aisle.ui
+package com.example.aisle.ui.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -29,7 +29,9 @@ class PhoneNumberFragment : Fragment() {
         btnContinue.setOnClickListener {
             val phoneNumber = "9952916759"
             val action =
-                PhoneNumberFragmentDirections.actionPhoneNumberFragmentToOtpFragment(phoneNumber)
+                PhoneNumberFragmentDirections.actionPhoneNumberFragmentToOtpFragment(
+                    phoneNumber
+                )
             findNavController().navigate(action)
         }
     }

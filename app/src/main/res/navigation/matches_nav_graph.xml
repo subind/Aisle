@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/matchesFragment"
-        android:name="com.example.aisle.ui.MatchesFragment"
+        android:name="com.example.aisle.ui.home.matches.MatchesFragment"
         android:label="MatchesFragment" />
 </navigation>

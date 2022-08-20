@@ -1,4 +1,4 @@
-package com.example.aisle.ui
+package com.example.aisle.ui.home.discover
 
 import android.os.Bundle
 import android.view.LayoutInflater
