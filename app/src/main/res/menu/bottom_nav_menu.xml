@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/discover"
+        android:id="@+id/discover_nav_graph"
         android:title="@string/discover"
         android:icon="@drawable/discover"/>
     <item
-        android:id="@+id/notes"
+        android:id="@+id/notes_nav_graph"
         android:title="@string/notes"
         android:icon="@drawable/notes"/>
     <item
-        android:id="@+id/matches"
+        android:id="@+id/matches_nav_graph"
         android:title="@string/matches"
         android:icon="@drawable/matches"/>
     <item
-        android:id="@+id/profile"
+        android:id="@+id/profile_nav_graph"
         android:title="@string/profile"
         android:icon="@drawable/profile"/>
 </menu>

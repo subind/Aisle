@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_otpFragment_to_homeActivity"
             app:destination="@id/homeActivity" />
+        <argument
+            android:name="navArgPhoneNumber"
+            app:argType="string" />
     </fragment>
     <activity
         android:id="@+id/homeActivity"

@@ -27,7 +27,10 @@ class PhoneNumberFragment : Fragment() {
     private fun initViews(view: View?) {
         btnContinue = view?.findViewById(R.id.continue_btn)!!
         btnContinue.setOnClickListener {
-            findNavController().navigate(R.id.action_phoneNumberFragment_to_otpFragment)
+            val phoneNumber = "9952916759"
+            val action =
+                PhoneNumberFragmentDirections.actionPhoneNumberFragmentToOtpFragment(phoneNumber)
+            findNavController().navigate(action)
         }
     }
 

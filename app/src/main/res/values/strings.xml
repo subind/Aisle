@@ -10,4 +10,7 @@
     <string name="notes">Notes</string>
     <string name="matches">Matches</string>
     <string name="profile">Profile</string>
+    <string name="discover_construction">Discover\n(Under construction. Coming soon...)</string>
+    <string name="profile_construction">Profile\n(Under construction. Coming soon...)</string>
+    <string name="matches_construction">Matches\n(Under construction. Coming soon...)</string>
 </resources>
