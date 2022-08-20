@@ -1,7 +1,8 @@
 package com.example.aisle.data.network
 
-import com.example.aisle.data.network.models.Login
-import com.example.aisle.data.network.models.Otp
+import com.example.aisle.data.network.models.login.Login
+import com.example.aisle.data.network.models.note.Note
+import com.example.aisle.data.network.models.otp.Otp
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -26,10 +27,10 @@ interface AisleApi {
     ): Response<Otp>
 
 
-    /*@GET("/users/test_profile_list")
+    @GET("/users/test_profile_list")
     suspend fun notes(
         @Header("Token")
         token: String
-    ): Response<>*/
+    ): Response<Note>
 
 }
