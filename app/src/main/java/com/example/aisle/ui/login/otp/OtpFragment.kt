@@ -4,17 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.view.WindowManager
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.aisle.R
-import com.example.aisle.utils.Common.Companion.insertSpaceAfterCountryCode
+import com.example.aisle.utils.AppUtils
+import com.example.aisle.utils.AppUtils.Companion.disableUserUiInteraction
+import com.example.aisle.utils.AppUtils.Companion.enableUserUiInteraction
+import com.example.aisle.utils.insertSpaceAfterCountryCode
+import com.example.aisle.utils.isVisible
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 
@@ -26,6 +27,7 @@ class OtpFragment : Fragment() {
     private lateinit var tvOtpCountDown: TextView
     private lateinit var etOtp: EditText
     private lateinit var userPhoneNumber: String
+    private lateinit var pgBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +50,7 @@ class OtpFragment : Fragment() {
     }
 
     private fun initViews(view: View?) {
+        pgBar = view?.findViewById(R.id.pg_bar)!!
         etOtp = view?.findViewById(R.id.otp_et)!!
         tvOtpCountDown = view?.findViewById(R.id.otp_count_down_tv)!!
 
@@ -61,6 +64,8 @@ class OtpFragment : Fragment() {
             if(userPhoneNumber.isNotEmpty() &&
                 userOtp.isNotEmpty() &&
                 userOtp.length == 4) {
+                pgBar.isVisible(true)
+                disableUserUiInteraction(requireActivity())
                 viewModel.getTokenFromApi(userPhoneNumber, userOtp)
             }else {
                 Toast.makeText(requireContext(), getString(R.string.otp_issue), Toast.LENGTH_LONG).show()
@@ -84,6 +89,8 @@ class OtpFragment : Fragment() {
         })
 
         viewModel.otpVerifiedTokenObtainedLiveData.observe(this, Observer { token ->
+            enableUserUiInteraction(requireActivity())
+            pgBar.isVisible(false)
             if(token.isNullOrEmpty()) {
                 Toast.makeText(requireContext(), getString(R.string.token_issue), Toast.LENGTH_LONG).show()
             } else {

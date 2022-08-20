@@ -5,14 +5,19 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.aisle.R
+import com.example.aisle.utils.AppUtils.Companion.disableUserUiInteraction
+import com.example.aisle.utils.AppUtils.Companion.enableUserUiInteraction
+import com.example.aisle.utils.isVisible
 
 class PhoneNumberFragment : Fragment() {
 
@@ -22,6 +27,7 @@ class PhoneNumberFragment : Fragment() {
     private lateinit var etCountryCode: EditText
     private lateinit var etPhoneNumber: EditText
     private lateinit var userPhoneNumber: String
+    private lateinit var pgBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +47,8 @@ class PhoneNumberFragment : Fragment() {
     }
 
     private fun initViews(view: View?) {
-        etCountryCode = view?.findViewById(R.id.country_code_et)!!
+        pgBar = view?.findViewById(R.id.pg_bar)!!
+        etCountryCode = view.findViewById(R.id.country_code_et)!!
         etPhoneNumber = view.findViewById(R.id.phone_number_et)
         btnContinue = view.findViewById(R.id.continue_btn)
 
@@ -50,6 +57,8 @@ class PhoneNumberFragment : Fragment() {
             val userTempPhoneNumber = etPhoneNumber.text.toString().trim()
             if(userTempCountryCode.isNotEmpty() && userTempCountryCode.length == 3 &&
                 userTempPhoneNumber.isNotEmpty() && userTempPhoneNumber.length == 10) {
+                pgBar.isVisible(true)
+                disableUserUiInteraction(requireActivity())
                 userPhoneNumber = userTempCountryCode + userTempPhoneNumber
                 viewModel.invokeIsExistingUserApi(userPhoneNumber)
             } else {
@@ -61,6 +70,8 @@ class PhoneNumberFragment : Fragment() {
     private fun initObservers() {
         viewModel.isExistingUserLiveData.observe(this, Observer { status ->
             Log.i(TAG, "Status of user is: $status")
+            enableUserUiInteraction(requireActivity())
+            pgBar.isVisible(false)
             if(status) {
                 val action =
                     PhoneNumberFragmentDirections.actionPhoneNumberFragmentToOtpFragment(

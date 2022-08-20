@@ -1,6 +1,6 @@
 package com.example.aisle.data.network
 
-import com.example.aisle.utils.Common
+import com.example.aisle.utils.AppUtils
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -19,7 +19,7 @@ class RetrofitInstance {
                 .build()
 
             Retrofit.Builder()
-                .baseUrl(Common.BASE_URL)
+                .baseUrl(AppUtils.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(retrofitClient)
                 .build()
