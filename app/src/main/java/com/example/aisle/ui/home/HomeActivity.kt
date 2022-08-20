@@ -7,6 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.aisle.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import java.text.NumberFormat
 
 class HomeActivity: AppCompatActivity() {
 
@@ -22,6 +23,9 @@ class HomeActivity: AppCompatActivity() {
         navController = navHostFragment.navController
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav)
+        bottomNavigationView.getOrCreateBadge(R.id.notes_nav_graph).number = 9
+        bottomNavigationView.getOrCreateBadge(R.id.matches_nav_graph).number = 50
+
         bottomNavigationView.setupWithNavController(navController)
 
     }
