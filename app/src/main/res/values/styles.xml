@@ -41,6 +41,7 @@
         <item name="android:textSize">@dimen/primary_text_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">end</item>
+        <item name="android:inputType">phone</item>
         <item name="android:background">@drawable/rounded_corner_edittext</item>
     </style>
 
@@ -51,6 +52,7 @@
         <item name="android:textSize">@dimen/primary_text_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">end</item>
+        <item name="android:inputType">number</item>
         <item name="android:background">@drawable/rounded_corner_edittext</item>
         <item name="android:paddingStart">@dimen/et_ph_number_left_right_padding</item>
         <item name="android:paddingEnd">@dimen/et_ph_number_left_right_padding</item>

@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.aisle.R
+import com.example.aisle.utils.Common.Companion.insertSpaceAfterCountryCode
 
 class OtpFragment : Fragment() {
 
@@ -31,7 +32,8 @@ class OtpFragment : Fragment() {
 
     private fun initViews(view: View?) {
         tvUserPhoneNumber = view?.findViewById(R.id.primary_title_tv)!!
-        tvUserPhoneNumber.text = arguments?.getString("navArgPhoneNumber") ?: ""
+        val userPhoneNumber= arguments?.getString("navArgPhoneNumber") ?: ""
+        tvUserPhoneNumber.text = userPhoneNumber.insertSpaceAfterCountryCode()
 
         btnContinue = view?.findViewById(R.id.continue_btn)!!
         btnContinue.setOnClickListener {

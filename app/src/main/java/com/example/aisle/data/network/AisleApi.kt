@@ -11,14 +11,14 @@ import retrofit2.http.Query
 
 interface AisleApi {
 
-    @POST("/users/phone_number_login")
+    @POST("users/phone_number_login")
     suspend fun login(
         @Query("number")
         userPhoneNumber: String
     ): Response<Login>
 
 
-    @POST("/users/verify_otp")
+    @POST("users/verify_otp")
     suspend fun otp(
         @Query("number")
         userPhoneNumber: String,
@@ -27,7 +27,7 @@ interface AisleApi {
     ): Response<Otp>
 
 
-    @GET("/users/test_profile_list")
+    @GET("users/test_profile_list")
     suspend fun notes(
         @Header("Token")
         token: String
