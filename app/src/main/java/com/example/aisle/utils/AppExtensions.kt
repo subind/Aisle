@@ -1,11 +1,13 @@
 package com.example.aisle.utils
 
+import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
 import com.example.aisle.data.network.models.note.NotesPrimaryDataPhoto
 import com.example.aisle.ui.home.notes.models.NotesRv
 import com.squareup.picasso.Picasso
+import jp.wasabeef.picasso.transformations.BlurTransformation
 
 fun String.insertSpaceAfterCountryCode(): String {
     val countryCode = this.toCharArray(startIndex = 0, endIndex = 2)
@@ -56,5 +58,13 @@ fun MutableList<NotesRv>.extractAndInsertNotesRv(tempNotes: MutableList<NotesRv>
 fun ImageView.loadImageHelper(imageUri: String) {
     if(imageUri.isNotEmpty()) {
         Picasso.get().load(imageUri).into(this)
+    }
+}
+
+fun ImageView.blurredLoadImageHelper(imageUri: String, context: Context) {
+    if(imageUri.isNotEmpty()) {
+        Picasso.get().load(imageUri)
+            .transform(BlurTransformation(context, 25, 1))
+            .into(this)
     }
 }

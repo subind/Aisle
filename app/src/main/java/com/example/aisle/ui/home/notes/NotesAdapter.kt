@@ -9,6 +9,7 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.example.aisle.R
 import com.example.aisle.ui.home.notes.models.NotesRv
+import com.example.aisle.utils.blurredLoadImageHelper
 import com.example.aisle.utils.loadImageHelper
 import com.google.android.material.imageview.ShapeableImageView
 
@@ -74,7 +75,7 @@ class NotesAdapter(notesList: MutableList<NotesRv>): RecyclerView.Adapter<Recycl
             }
             NotesRv.SECONDARY_SECTION -> {
                 (holder as NotesSecondaryViewHolder).apply {
-                    ivSecondaryProfilePic.loadImageHelper(row.noteInfo.secondaryProfiles?.pic ?: "")
+                    ivSecondaryProfilePic.blurredLoadImageHelper(row.noteInfo.secondaryProfiles?.pic ?: "", holder.itemView.context)
                     tvSecondaryProfileName.text = row.noteInfo.secondaryProfiles?.name
                 }
             }

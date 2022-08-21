@@ -31,7 +31,9 @@ class NotesViewModel : ViewModel() {
             if (response.isSuccessful) {
                 val note = response.body()
                 note?.let {
-                    prepareNoteInfoList(note)
+                    if(noteInfoScreenList.isEmpty()){
+                        prepareNoteInfoList(note)
+                    }
                 }
             } else {
                 Log.i(
