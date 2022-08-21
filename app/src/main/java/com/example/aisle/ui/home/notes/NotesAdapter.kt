@@ -73,7 +73,10 @@ class NotesAdapter(notesList: MutableList<NotesRv>): RecyclerView.Adapter<Recycl
                 }
             }
             NotesRv.SECONDARY_SECTION -> {
-
+                (holder as NotesSecondaryViewHolder).apply {
+                    ivSecondaryProfilePic.loadImageHelper(row.noteInfo.secondaryProfiles?.pic ?: "")
+                    tvSecondaryProfileName.text = row.noteInfo.secondaryProfiles?.name
+                }
             }
         }
     }
@@ -100,6 +103,7 @@ class NotesAdapter(notesList: MutableList<NotesRv>): RecyclerView.Adapter<Recycl
 
     class NotesSecondaryViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         internal var ivSecondaryProfilePic = itemView.findViewById<ImageView>(R.id.secondary_profile_iv)
+        internal var tvSecondaryProfileName = itemView.findViewById<TextView>(R.id.secondary_profile_tv)
     }
 
 }

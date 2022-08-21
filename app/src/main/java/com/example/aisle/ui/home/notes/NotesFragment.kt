@@ -59,15 +59,30 @@ class NotesFragment: Fragment() {
 
     private fun initNotesRecyclerView(notesList: MutableList<NotesRv>) {
         val adapter = NotesAdapter(notesList)
-        val layoutManager = GridLayoutManager(activity, 1)
-        /*layoutManager.spanSizeLookup = object : SpanSizeLookup() {
+        val layoutManager = GridLayoutManager(activity, 2)
+        layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 return when (adapter.getItemViewType(position)) {
-                    NotesRv.SECONDARY_SECTION -> 2
-                    else -> 1
+                    NotesRv.SECONDARY_SECTION -> {
+                        1
+                    }
+                    else -> {
+                        2
+                    }
                 }
             }
-        }*/
+
+            override fun getSpanIndex(position: Int, spanCount: Int): Int {
+                return when (adapter.getItemViewType(position)) {
+                    NotesRv.SECONDARY_SECTION -> {
+                        1
+                    }
+                    else -> {
+                        2
+                    }
+                }
+            }
+        }
         rvNotes.layoutManager = layoutManager
         rvNotes.adapter = adapter
         (rvNotes.adapter as NotesAdapter).notifyDataSetChanged()

@@ -42,6 +42,7 @@
         <item name="android:gravity">end</item>
         <item name="android:inputType">phone</item>
         <item name="android:maxLength">4</item>
+        <item name="android:digits">+1234567890</item>
         <item name="android:background">@drawable/bg_rounded_corner_et</item>
     </style>
 
@@ -54,6 +55,7 @@
         <item name="android:gravity">end</item>
         <item name="android:inputType">number</item>
         <item name="android:maxLength">10</item>
+        <item name="android:digits">1234567890</item>
         <item name="android:background">@drawable/bg_rounded_corner_et</item>
         <item name="android:paddingStart">@dimen/et_ph_number_left_right_padding</item>
         <item name="android:paddingEnd">@dimen/et_ph_number_left_right_padding</item>
@@ -67,6 +69,8 @@
         <item name="android:textColor">@color/black_primary</item>
         <item name="android:textSize">@dimen/primary_text_size</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:digits">1234567890</item>
+        <item name="android:inputType">number</item>
         <item name="android:gravity">end</item>
         <item name="android:background">@drawable/bg_rounded_corner_et</item>
     </style>

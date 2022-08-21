@@ -20,7 +20,7 @@ class NotesViewModel : ViewModel() {
 
     private val TAG = "NotesViewModel"
     private var api: AisleApi = RetrofitInstance.aisleApi
-    val noteInfoScreenList = mutableListOf<NotesRv>()
+    private val noteInfoScreenList = mutableListOf<NotesRv>()
 
     private val _noteInfoScreenListLivedata = MutableLiveData<MutableList<NotesRv>>()
     val noteInfoScreenListLivedata = _noteInfoScreenListLivedata

@@ -26,6 +26,5 @@ class HomeActivity: AppCompatActivity() {
         bottomNavigationView.getOrCreateBadge(R.id.matches_nav_graph).number = 50
 
         bottomNavigationView.setupWithNavController(navController)
-
     }
 }

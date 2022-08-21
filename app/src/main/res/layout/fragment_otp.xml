@@ -34,7 +34,7 @@
 
     <EditText
         android:id="@+id/otp_et"
-        style="@style/et_country_code_style"
+        style="@style/et_otp_style"
         android:layout_marginStart="@dimen/et_country_code_start_margin"
         android:layout_marginTop="@dimen/et_ph_number_top_margin"
         app:layout_constraintStart_toStartOf="parent"
