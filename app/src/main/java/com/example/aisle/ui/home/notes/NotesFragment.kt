@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -13,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.aisle.R
 import com.example.aisle.ui.home.HomeActivity
 import com.example.aisle.ui.home.notes.models.NotesRv
+import com.example.aisle.utils.AppUtils.Companion.disableUserUiInteraction
+import com.example.aisle.utils.AppUtils.Companion.enableUserUiInteraction
+import com.example.aisle.utils.isVisible
 
 
 class NotesFragment: Fragment() {
@@ -20,6 +24,7 @@ class NotesFragment: Fragment() {
     private val TAG = "NotesFragment"
     private lateinit var viewModel: NotesViewModel
     private lateinit var rvNotes: RecyclerView
+    private lateinit var pgBar: ProgressBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +59,10 @@ class NotesFragment: Fragment() {
     }
 
     private fun initUi(view: View) {
+        pgBar = view.findViewById(R.id.pg_bar)!!
         rvNotes = view.findViewById<RecyclerView>(R.id.notes_rv)
+        pgBar.isVisible(true)
+        disableUserUiInteraction(requireActivity())
     }
 
     private fun initNotesRecyclerView(notesList: MutableList<NotesRv>) {
@@ -86,6 +94,8 @@ class NotesFragment: Fragment() {
         rvNotes.layoutManager = layoutManager
         rvNotes.adapter = adapter
         (rvNotes.adapter as NotesAdapter).notifyDataSetChanged()
+        pgBar.isVisible(false)
+        enableUserUiInteraction(requireActivity())
     }
 
 }

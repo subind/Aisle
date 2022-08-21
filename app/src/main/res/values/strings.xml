@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aisle</string>
+    <string name="app_name">AisleSubind</string>
     <string name="get_otp">Get OTP</string>
     <string name="enter_your_phone_number">Enter Your Phone Number</string>
     <string name="_continue">Continue</string>
