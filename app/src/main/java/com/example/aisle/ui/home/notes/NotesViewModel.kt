@@ -102,12 +102,12 @@ class NotesViewModel : ViewModel() {
             tempSecondaryNoteInfoList.add(secondarySectionNote)
         }
 
-        noteInfoScreenList.extractAndInsertNotesRv(tempPrimaryNoteInfoList)
-        noteInfoScreenList.extractAndInsertNotesRv(tempSecondaryNoteInfoList)
-        noteInfoScreenList.addNotesTitleSection(titleSectionNote)
-        noteInfoScreenList.addNotesUpgradeSection(upgradeSectionNote)
-
         withContext(Dispatchers.Main) {
+            noteInfoScreenList.extractAndInsertNotesRv(tempPrimaryNoteInfoList)
+            noteInfoScreenList.extractAndInsertNotesRv(tempSecondaryNoteInfoList)
+            noteInfoScreenList.addNotesTitleSection(titleSectionNote)
+            noteInfoScreenList.addNotesUpgradeSection(upgradeSectionNote)
+
             _noteInfoScreenListLivedata.value = noteInfoScreenList
         }
     }

@@ -7,7 +7,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.aisle.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import java.text.NumberFormat
 
 class HomeActivity: AppCompatActivity() {
 

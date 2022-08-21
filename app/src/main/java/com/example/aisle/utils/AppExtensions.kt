@@ -1,9 +1,11 @@
 package com.example.aisle.utils
 
 import android.view.View
+import android.widget.ImageView
 import android.widget.ProgressBar
 import com.example.aisle.data.network.models.note.NotesPrimaryDataPhoto
 import com.example.aisle.ui.home.notes.models.NotesRv
+import com.squareup.picasso.Picasso
 
 fun String.insertSpaceAfterCountryCode(): String {
     val countryCode = this.toCharArray(startIndex = 0, endIndex = 2)
@@ -49,4 +51,10 @@ fun MutableList<NotesRv>.extractAndInsertNotesRv(tempNotes: MutableList<NotesRv>
         this.add(it)
     }
     return this
+}
+
+fun ImageView.loadImageHelper(imageUri: String) {
+    if(imageUri.isNotEmpty()) {
+        Picasso.get().load(imageUri).into(this)
+    }
 }

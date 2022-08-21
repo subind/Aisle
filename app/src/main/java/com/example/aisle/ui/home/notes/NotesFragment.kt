@@ -8,19 +8,22 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.aisle.R
 import com.example.aisle.ui.home.HomeActivity
-import com.example.aisle.ui.login.phonenumber.PhoneViewModel
+import com.example.aisle.ui.home.notes.models.NotesRv
+
 
 class NotesFragment: Fragment() {
 
     private val TAG = "NotesFragment"
     private lateinit var viewModel: NotesViewModel
+    private lateinit var rvNotes: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[NotesViewModel::class.java]
-        initObservers()
     }
 
     override fun onCreateView(
@@ -32,15 +35,42 @@ class NotesFragment: Fragment() {
         return inflater.inflate(R.layout.fragment_notes, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUi(view)
+        initObservers()
+    }
+
     override fun onResume() {
         super.onResume()
         viewModel.getNotesInfo((requireActivity() as HomeActivity).token)
     }
 
     private fun initObservers() {
-        viewModel.noteInfoScreenListLivedata.observe(this, Observer {
+        viewModel.noteInfoScreenListLivedata.observe(viewLifecycleOwner, Observer {
             Log.i(TAG, "initObservers: ${it.size}")
+            initNotesRecyclerView(it)
         })
+    }
+
+    private fun initUi(view: View) {
+        rvNotes = view.findViewById<RecyclerView>(R.id.notes_rv)
+    }
+
+    private fun initNotesRecyclerView(notesList: MutableList<NotesRv>) {
+        val adapter = NotesAdapter(notesList)
+        val layoutManager = GridLayoutManager(activity, 1)
+        /*layoutManager.spanSizeLookup = object : SpanSizeLookup() {
+            override fun getSpanSize(position: Int): Int {
+                return when (adapter.getItemViewType(position)) {
+                    NotesRv.SECONDARY_SECTION -> 2
+                    else -> 1
+                }
+            }
+        }*/
+        rvNotes.layoutManager = layoutManager
+        rvNotes.adapter = adapter
+        (rvNotes.adapter as NotesAdapter).notifyDataSetChanged()
     }
 
 }
